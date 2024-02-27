@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Detail{% endblock %}
+
+{% block content %}
+<h1>Detail</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Category</th>
+            <th>Created</th>
+            <th>Updated</th>
+        </tr>
+    </thead>
+    <tr>
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td class="text-end">${{ product.price|floatformat:2 }}</td>
+        <td>{{ product.description }}</td>
+        <td><img src="{{ product.image.url }}" alt="{{ product.name }}" width="100"></td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.created|date:"Y-m-d H:i:s" }}</td>
+        <td>{{ product.updated|date:"Y-m-d H:i:s" }}</td>
+    </tr>
+</table>
+<a class="btn btn-primary" href="{% url 'list' %}">Back</a>
+<a class="btn btn-primary" href="{% url 'update' product.id %}">Edit</a>
+{% endblock %}
