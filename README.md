@@ -30,9 +30,4 @@ python manage.py migrate
 ```
 python manage.py runserver
 ```
-Then, visit to `http://127.0.0.1:8000`.
-
-## Running the tests
-```
-python manage.py test
-```
+Then, visit `http://127.0.0.1:8000`
